@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "Net Anki",
+  "version": "1.0",
+  "description": "It's extension for web application netAnki: http://netanki-maximtorba.rhcloud.com/",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon38.png",
+    "default_popup": "popup.html"
+  },
+  "author": "Maxim Torba",
+  "homepage_url": "http://netanki-maximtorba.rhcloud.com/",
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "scripts/background.js"
+    ]
+  },
+
+  "commands": {
+    "selected-text": {
+      "description": "get selected text on page",
+      "global": false,
+      "suggested_key": {
+        "default": "Alt+S"
+      }
+    }
+  },
+
+  "permissions": [
+    "activeTab",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "styles/content.style.css"
+      ],
+      "js": [
+        "scripts/content.script.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "externally_connectable": {
+    "matches": [
+      "http://netanki-maximtorba.rhcloud.com/"
+    ]
+  }
+}
