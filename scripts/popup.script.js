@@ -16,6 +16,7 @@ $(function () {
     $(document.forms['translate']).on('submit', function (e) {
         var url = "http://api.lingualeo.com/gettranslates?" + $(this).serialize();
         word = $(this).find('input[name="word"]').val();
+        
         if (word != '') {
             $.ajax({
                 url: url,
@@ -46,6 +47,8 @@ $(function () {
     
     function showTranslates(data) {
         var wordCollection = [], imgCollection = [];
+        
+        $('#word').text(word);
         
         $.each(data.translate, function (index, translate) {
             wordCollection.push($(document.createElement('li')).addClass('word').append(
@@ -118,7 +121,12 @@ $(function () {
     $('#google-translate').on('click', function () {
         var googleTranslateURL = "https://translate.google.com/#en/ru/" + word;
         chrome.windows.create({
-            url: googleTranslateURL
+            url: googleTranslateURL,
+            width: 900,
+            height: 2000,
+            top: 0,
+            left: 0,
+            type: 'popup'
         });
     });
     

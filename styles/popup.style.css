@@ -13,6 +13,14 @@ body {
     padding: 10px;
 }
 
+#word {
+    font-size: 2.1em;
+    font-weight: 600;
+}
+#word:after{
+    content: ':';
+}
+
 #word-input {
     font-size: 2em;
     padding-left: 7px;
@@ -45,12 +53,12 @@ body {
     display: none;
 }
 
-#translates-list li:not(.word) {
+#translates-list li.img {
     display: inline-block;
     margin: 5px 20px;
 }
 
-#translates-list li:not(.img) {
+#translates-list li.word {
     padding-left: 10px;
 }
 
