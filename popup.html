@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Net Anki</title>
-    <link rel="stylesheet" href="styles/popup.style.css">
     <link rel="stylesheet" href="styles/materialize.min.css">
-
-    <script src="scripts/jquery-3.1.0.min.js"></script>
-    <script src="scripts/materialize.min.js"></script>
+    <link rel="stylesheet" href="styles/popup.style.css">
 </head>
-<body >
+<body>
 
 <a class="btn-login btn waves-effect waves-light" href="http://netanki-maximtorba.rhcloud.com/">LOG IN</a>
 
@@ -21,7 +18,9 @@
 <div id="translates-container">
     <span id="instruction">select the translation and the picture</span>
     <span id="word"></span>
-    <ul id="translates-list"></ul>
+    <ul id="translates-list">
+        <button id="btn-play"><img src="images/play.png"></button>
+    </ul>
     <button id="google-translate" class="btn waves-effect waves-light">GOOGLE TRANSLATE</button>
     <input id="translate-input" type="text" placeholder="type your translate">
     <input id="example-input" type="text" placeholder="type example">
@@ -29,7 +28,9 @@
     <button id="btn-newSearch" class="btn waves-effect waves-light">NEW SEARCH</button>
 </div>
 
+<audio id="sound"></audio>
+<script src="scripts/jquery-3.1.0.min.js"></script>
+<script src="scripts/materialize.min.js"></script>
 <script src="scripts/popup.script.js"></script>
-
 </body>
 </html>

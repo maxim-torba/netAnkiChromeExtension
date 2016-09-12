@@ -15,7 +15,12 @@ $(function () {
     
     $(document.forms['translate']).on('submit', function (e) {
         var url = "http://api.lingualeo.com/gettranslates?" + $(this).serialize();
+        
         word = $(this).find('input[name="word"]').val();
+        
+        $('#btn-search').fadeOut(100, function () {
+            $(this).fadeIn(200);
+        });
         
         if (word != '') {
             $.ajax({
@@ -132,6 +137,10 @@ $(function () {
     
     $('#btn-newSearch').on('click', function () {
         location.reload();
+    });
+    
+    $('#btn-play').on('click', function () {
+        $('#sound').attr('src', words.sound_url)[0].play();
     });
     
     chrome.commands.onCommand.addListener(commandListener);
