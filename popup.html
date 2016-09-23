@@ -19,13 +19,19 @@
     <span id="instruction">select the translation and the picture</span>
     <span id="word"></span>
     <ul id="translates-list">
-        <button id="btn-play"><img src="images/play.png"></button>
+        <div id="buttons-container">
+            <button id="btn-play" class="tooltipped" data-tooltip="play song"
+                    data-position="left"><img src="images/play.png"></button>
+            <button id="google-translate" class="tooltipped" data-tooltip="google translate"
+                    data-position="left"><img src="images/google-translate.png"></button>
+            <input id="translate-input" type="text" placeholder="type your translate">
+            <input id="example-input" type="text" placeholder="type example">
+            <button id="btn-send" class="tooltipped" data-tooltip="add word"
+                    data-position="left"><img src="images/add-word.png"></button>
+            <button id="btn-newSearch" class="tooltipped" data-tooltip="new search"
+                    data-position="left"><img src="images/new-search.png"></button>
+        </div>
     </ul>
-    <button id="google-translate" class="btn waves-effect waves-light">GOOGLE TRANSLATE</button>
-    <input id="translate-input" type="text" placeholder="type your translate">
-    <input id="example-input" type="text" placeholder="type example">
-    <button id="btn-send" class="btn waves-effect waves-light">ADD TO DICTIONARY</button>
-    <button id="btn-newSearch" class="btn waves-effect waves-light">NEW SEARCH</button>
 </div>
 
 <audio id="sound"></audio>

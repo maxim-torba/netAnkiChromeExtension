@@ -9,6 +9,8 @@ $(function () {
         btnLogin.css('display', 'none');
     }
     
+    $('.tooltipped').tooltip({delay: 50});
+    
     btnLogin.on('click', function () {
         chrome.tabs.create({url: $(this).attr('href')});
     });
@@ -142,6 +144,16 @@ $(function () {
     $('#btn-play').on('click', function () {
         $('#sound').attr('src', words.sound_url)[0].play();
     });
+    
+    /*$('#translates-list').find('button').on('click', function () {
+        $(this).animate({
+            backgroundSize: '100px 95px'
+        }, function () {
+            $(this).animate({
+                backgroundSize: '60px 55px'
+            })
+        });
+    });*/
     
     chrome.commands.onCommand.addListener(commandListener);
     
