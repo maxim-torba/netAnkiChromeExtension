@@ -1,7 +1,8 @@
 $(function () {
     var btnLogin = $('.btn-login');
     var words = {};
-    var word;
+    var word = '';
+    var rusWord = '';
     
     if (localStorage.logged == undefined || localStorage.logged === 'false') {
         btnLogin.css('display', 'block');
@@ -16,14 +17,25 @@ $(function () {
     });
     
     $(document.forms['translate']).on('submit', function (e) {
-        var url = "http://api.lingualeo.com/gettranslates?" + $(this).serialize();
         
         word = $(this).find('input[name="word"]').val();
         
-        $('#btn-search').fadeOut(100, function () {
+        if (/[а-яА-Я]/g.exec(word)) {
+            getRusTranslate();
+            rusWord = word;
+        } else {
+            var url = "http://api.lingualeo.com/gettranslates?" + $(this).serialize();
+            getEngTranslate(url);
+        }
+        
+        $('#btn-search').fadeOut(300, function () {
             $(this).fadeIn(200);
         });
         
+        return false;
+    });
+    
+    function getEngTranslate(url) {
         if (word != '') {
             $.ajax({
                 url: url,
@@ -49,8 +61,35 @@ $(function () {
         } else {
             showMessage('Type the word or select on page');
         }
-        return false;
-    });
+    }
+    
+    function getRusTranslate() {
+        var url = 'http://api.lingualeo.com/translate.php?q=' + word
+            + '&source=ru&target=en';
+        if (word != '') {
+            $.ajax({
+                url: url,
+                method: "GET",
+                
+                statusCode: {
+                    200: function (data) {
+                        word = data.translation;
+                        let url = "http://api.lingualeo.com/gettranslates?word=" + word;
+                        if (typeof data.error_msg == 'undefined') {
+                            getEngTranslate(url);
+                        } else {
+                            showMessage(data.error_msg);
+                        }
+                    }
+                },
+                error: function () {
+                    showMessage('Can\'t get translate to due problem with internet');
+                }
+            });
+        } else {
+            showMessage('Type the word or select on page');
+        }
+    }
     
     function showTranslates(data) {
         var wordCollection = [], imgCollection = [];
@@ -76,6 +115,7 @@ $(function () {
         });
         
         $('#translates-list').append(wordCollection, imgCollection);
+        $('#translate-input').val(rusWord);
         $('#translates-container').fadeIn();
         $('#btn-newSearch').fadeIn();
     }
@@ -146,14 +186,14 @@ $(function () {
     });
     
     /*$('#translates-list').find('button').on('click', function () {
-        $(this).animate({
-            backgroundSize: '100px 95px'
-        }, function () {
-            $(this).animate({
-                backgroundSize: '60px 55px'
-            })
-        });
-    });*/
+     $(this).animate({
+     backgroundSize: '100px 95px'
+     }, function () {
+     $(this).animate({
+     backgroundSize: '60px 55px'
+     })
+     });
+     });*/
     
     chrome.commands.onCommand.addListener(commandListener);
     
