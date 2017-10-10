@@ -1,4 +1,4 @@
-var url = "http://netanki-maximtorba.rhcloud.com/";
+var url = "https://netanki.herokuapp.com/";
 
 /* Listen for external messages (messages from web-pages) */
 chrome.runtime.onMessageExternal.addListener(function(msg, sender) {

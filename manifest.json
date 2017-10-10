@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Net Anki",
   "version": "1.0",
-  "description": "It's extension for web application netAnki: http://netanki-maximtorba.rhcloud.com/",
+  "description": "It's extension for web application netAnki: https://netanki.herokuapp.com/",
   "icons": {
     "16": "images/icon16.png",
     "48": "images/icon48.png",
@@ -13,14 +13,14 @@
     "default_popup": "popup.html"
   },
   "author": "Maxim Torba",
-  "homepage_url": "http://netanki-maximtorba.rhcloud.com/",
+  "homepage_url": "https://netanki.herokuapp.com/",
   "background": {
     "persistent": false,
     "scripts": [
       "scripts/background.js"
     ]
   },
-
+  "key": "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDg8vUiD07D3JdsWpn/4GdGFh2r48IdMaz3Uv6Nh59xu2AnCYB08aP7e0fMIjluJEwAwrYjlaUM3UECJ6Vc9F6EbSCN+cqzeaU/jR2gy/WGhoOa7GWTfqKV8IcA+ukXCEemhow1hA+XvOCRHr6OAFvmkX6LnnU07iZNL3ZQMRDQsQdrP+mbVBUfTYdj8/BuOq9YELnIeYQRujgvJ2NJwaNpdwKZBhXPFmVQN1Ft7cWDLTDQf+XJIrO2TpZHLvmtY73X+8sgt3H0C7B6P5FiB4Zinh48b7BE/jEDWonQeOunVCV8Ibemo43E1/eCVhC0gWypQ7rQST19yQYwdz39h0tXAgMBAAECggEAIH23PnYrkEq6bGIhwD2vbQYgvwUksobMTuTj85lVRF4mIz1SGpIUd2x1EF0ZInmHqMx29mjU8Ci9DQyg6+44ALSqcRdVWdsGLUm6r9EF46pmM+hVO5qc7T9SoKedJ0CA6OKiOdCbV/VmEk/4ghY3L/Rv7Ma0czK6wYdLdYXAwgOqhxPfO9BsSzY9ZN+XLb5S+LBLvPDvUFBDxWOoQOd2wz9o8TWXZR9gjhaR+Hqc8jmS0TfGVi7U1ELfD3sNPF+nxCbRcjqfWxzmFj49SBxkJuywk6F76SjFalV77xfRzBbPDjgYx5RWP3XXXN4sd0PPLs2ffQ/TL+3S/JlHEjwCkQKBgQD5/YJajFl5DXsfMsGrwP/HtONqGC7ytiXzTh9YrVv3UxA6PSnO+xwDuLvNsEABb38idZMTY9rtznJx+9A5gcrbW+oj9am3TsAkYv7XBXnXSzGfxv+PA4MiDguO3U4eY9ReW3jd9pGVc1/JqZtR1pIhpfrBBDZi3l3adUmH34DOiwKBgQDmW1bx4ugAFrrBB3e3XKbmXbF92LssO5/Xd7ym6TXQJSm2OPWFAqKon8gaIdWlAezFNNS15GkQaOw5bvUK75bTWFrYahCNiw4tutx2Cdx7x7qcaj12KDP4iSlhs7pvsX+Vqb4GpNf98uuwgTokPl3kOnzI1CbAc10HbS0SPi275QKBgCdyFfB9ttyAAQ5yLtcQFAwKAdxKxpWroh9bE10ltZ438BaQchljzA7WRmP1TJQtaK0iSjvEBNaDPdG4fymjzkOApFhaOhZfibf0GuwIxCnxhnoEp2yEjFuCRdacGuh2rhrZah/z+RLQ6qtiZMysA9DlZMSyCnbdSYff++NBpAxzAoGAfvK1bqZivrHIB9rqseVgoTHfQABx3kWZqC/3inCZVHU2kJLBU6UJKS6tIyGkUMRHzMJ5uyf+cqmwDVLFvlodX6mgnwWMy8RncvI4zuBOXvTKNasi5fvv8Db+1DYtN6K1MjCSZazwz6XRF7uP5CtuqPlGjZLFLGgnS5FyNkyH/bUCgYEAlc3zXZXU7BfhqVctvDod43A7j1hoZYdOfCSipMWqZn5ghnWUcHKpXG/VrvwGJzWTp4eglEORRy7tza+PyNduzT4J+odyGK1x8ml7ALCQqfBbKNqljNiwM1yLeVbGEnhR6GUBRU3TPnBqmVMNrrAdLAE/da6DDFiaBFm1ufnB4ZM=",
   "commands": {
     "selected-text": {
       "description": "get selected text on page",
@@ -30,7 +30,6 @@
       }
     }
   },
-
   "permissions": [
     "activeTab",
     "http://*/*",
@@ -53,7 +52,7 @@
   ],
   "externally_connectable": {
     "matches": [
-      "http://netanki-maximtorba.rhcloud.com/"
+      "https://netanki.herokuapp.com/"
     ]
   }
 }
